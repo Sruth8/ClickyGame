@@ -15,7 +15,7 @@ export default function GameBoard({
                 id={card.id}
                 type={card.type}
               //  back={'/img/legs.jpg'}
-                front={'/img/lookie.png'}
+                front={'/img/smokie'}
                 width={cardsize / 5}
                 height={cardsize / 5}
                 flipped={flipped.includes(card.id)}
