@@ -7,13 +7,17 @@ import './style.css'
 export default function Card({
   handleClick,
   flipped,
-  back,
-  front,
+  type,
+  id,
+  //back,
+  //front,
   height,
   width,
+  disabled,
+  solved,
 }) {
 
-  // === this div is a container that will hold the cards and tell if it is flipped
+  // === this container  will hold the cards and tell if it is flipped
   return (
     <div
       className={`flip-container ${flipped ? 'flipped' : ''}`}
@@ -21,15 +25,19 @@ export default function Card({
         width,
         height,
       }}
-      onClick={handleClick}
+      onClick={() => disabled ? null : handleClick(id)} //
     >
       
       <div className='flipper'> 
         <img
+        style={{
+          height,
+          width,
+        }}
           alt='card'
           className={flipped ? 'front' : 'back'}
-          src={flipped ? front : back}
-          style={{ width, height }}
+          src={flipped || solved ? `/img/${type}.png` :`/img/s.png`}
+         // style={{ width, height }}
         />
       </div>
     </div>
@@ -38,9 +46,12 @@ export default function Card({
 // === this is in javascript object. this also controlls the carts
 Card.propTypes = {
   flipped: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
-  back: PropTypes.string.isRequired,
-  front: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  //front: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
   handleClick: PropTypes.func.isRequired,
+  solved: PropTypes.bool.isRequired,
 }
