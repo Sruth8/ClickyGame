@@ -22,7 +22,7 @@ export default function App() {
      // eslint-disable-next-line
   }, cards) // had to add the above line so this would work
 
-  // resize the board to be responsive
+  // resize the board to be responsive click listener
   useEffect(() => {
     const sizingListener = window.addEventListener('resize', sizingBoard)
     return () => window.removeEventListener('resize', sizingListener)
@@ -52,9 +52,10 @@ export default function App() {
 
 //preloads the images to the cards
 const preCacheImages = () => { 
-     // eslint-disable-next-line
+
+    // eslint-disable-next-line  
   cards.map((card) => {
- 
+
     const src = `/img/${card.type}.png`
     console.log(src)
     new Image().src = src

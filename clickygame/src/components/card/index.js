@@ -36,7 +36,7 @@ export default function Card({
         }}
           alt='card'
           className={flipped ? 'front' : 'back'}
-          src={flipped || solved ? `/img/${type}.png` :`/img/s.png`}
+          src={flipped || solved ? `/img/${type}.png` :`/img/.png`}
          // style={{ width, height }}
         />
       </div>
@@ -50,7 +50,7 @@ Card.propTypes = {
   height: PropTypes.number.isRequired,
   width: PropTypes.number.isRequired,
   type: PropTypes.string.isRequired,
-  //front: PropTypes.string.isRequired,
+  front: PropTypes.string.isRequired,
   disabled: PropTypes.bool.isRequired,
   handleClick: PropTypes.func.isRequired,
   solved: PropTypes.bool.isRequired,
