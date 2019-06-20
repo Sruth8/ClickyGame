@@ -4,13 +4,14 @@
     perspective: 1000px;
     display: inline-block;
     border: 1px solid white;
-    /* background: rgb(82, 82, 218); */
+    background: rgb(82, 82, 218);
     /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz3cZbY1kfd5xsz6nHqZVzl7mod-K4T8OuyQ89pMHIgXqrk1Pc); */
   }
   
   /* this will flip  the cards */
   .flip-container.flipped .flipper {
     transform: rotateY(180deg);
+    /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz3cZbY1kfd5xsz6nHqZVzl7mod-K4T8OuyQ89pMHIgXqrk1Pc); */
   }
   
   .flipper {

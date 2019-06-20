@@ -5,20 +5,20 @@ import './styles.css'
 //import GameBoard from './components/gameBoard'
 
 export default function GameBoard({
-    disabled ,cardsize, cards, flipped, handleClick, solved,
+    disabled ,cardsize, cards, flipped, handleClick, solved, id
 }) {
     return(
         <div className='board'>
             {cards.map((card)=>(
                 <Card
-                key={cards.id}
-                id={cards.id}
+                key={card.id}
+                id={card.id}
                 type={cards.type}
-               back={'/img/legs.jpg'}
-               front={'/img/smokie'}
+            //    back={'/img/legs.jpg'}
+            //    front={'/img/smokie'}
                 width={cardsize / 5}
                 height={cardsize / 5}
-                flipped={flipped.includes(cards.id)}
+                flipped={flipped.includes(card.id)}
                 handleClick={handleClick}
                 disabled={disabled || solved.includes(cards.id) }
                 solved={solved.includes(cards.id)} //this will help show or keep visible the correct matches if user wins
@@ -34,4 +34,5 @@ GameBoard.propTypes= {
     cards: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
     flipped: PropTypes.arrayOf(PropTypes.number).isRequired,
     handleClick: PropTypes.func.isRequired,
+    id: PropTypes.func.isRequired
 }
