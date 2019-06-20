@@ -53,10 +53,10 @@ export default function App() {
 //preloads the images to the cards
 const preCacheImages = () => { 
 
-    // eslint-disable-next-line  
-  cards.map((card) => {
+     // eslint-disable-next-line 
+  cards.map((cards) => {
 
-    const src = `/img/${card.type}.png`
+    const src = `/img/${cards.type}.png`
     console.log(src)
     new Image().src = src
   })
@@ -73,8 +73,8 @@ const resetCards = () => {
 }
   const sameCardFlipped =(id) => flipped.includes(id)
 const isMatch = (id) => {
-  const selected = cards.find((card)=> card.id === id)
-  const selectedCard = cards.find((card) => flipped[0] === card.id)
+  const selected = cards.find((cards)=> cards.id === id)
+  const selectedCard = cards.find((cards) => flipped[0] === cards.id)
   return selectedCard.type === selected.type
 }
 

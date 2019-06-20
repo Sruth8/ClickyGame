@@ -11,17 +11,17 @@ export default function GameBoard({
         <div className='board'>
             {cards.map((card)=>(
                 <Card
-                key={card.id}
-                id={card.id}
-                type={card.type}
-              //  back={'/img/legs.jpg'}
-              //  front={'/img/smokie'}
+                key={cards.id}
+                id={cards.id}
+                type={cards.type}
+               back={'/img/legs.jpg'}
+               front={'/img/smokie'}
                 width={cardsize / 5}
                 height={cardsize / 5}
-                flipped={flipped.includes(card.id)}
+                flipped={flipped.includes(cards.id)}
                 handleClick={handleClick}
-                disabled={disabled || solved.includes(card.id) }
-                solved={solved.includes(card.id)} //this will help show or keep visible the correct matches if user wins
+                disabled={disabled || solved.includes(cards.id) }
+                solved={solved.includes(cards.id)} //this will help show or keep visible the correct matches if user wins
                 />
             ))}
         </div>
